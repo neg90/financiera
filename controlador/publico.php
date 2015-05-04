@@ -1,9 +1,7 @@
 <?php
 
-require_once('Privado.php');
-require_once('Error.php');
-require_once '../Twig/Autoloader.php';
-require_once('cargaTwig.php');
+require_once '../vendor/autoload.php';
+
 
 class ControladorPublico {
 	static function Principal(){
