@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <title>{% block title %}Base Privada{% endblock %} - Financiera Naveyra </title>
-  </head>
+{% extends "basePrivada.html.twig" %}
 
-  <body style="BGCOLOR=""">
-    <div class="container">    
-      <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+{% block title %}Index{% endblock %}
+
+{% block conteiner %}
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
         <div class="panel panel-info" >
           <div class="panel-heading">
               <div class="panel-title">Ingrese sus datos </div>
@@ -39,20 +32,6 @@
                         </div>                     
         </div>  
       </div>
-    </div> 
-
-   
-    <!-- Librería jQuery requerida por los plugins de JavaScript -->
-    <script src="http://code.jquery.com/jquery.js"></script>
- 
-    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
-         incluir archivos JavaScript individuales de los únicos
-         plugins que utilices) -->
-    <script src="js/bootstrap.min.js"></script>
+{% endblock %}
 
 
-  </body>
-  <hr style="width:100%;position: absolute; bottom: 25px;">
-  <footer id="main-footer">
-   
-  </footer>
