@@ -1,0 +1,24 @@
+/*!
+ Aparece en la vista login 1 sola vez
+*/
+.cajaLogin{
+	margin-top:50px;
+}
+/*!
+ Aparece en la vista login 2 veces
+*/
+.input-login{
+	margin-bottom: 25px;
+}
+/*!
+ Aparece en la vista login 1 sola vez
+*/
+.panel-login{
+	padding-top:30px;
+}
+
+
+.boton-enviar{
+	width:100%;
+}
+

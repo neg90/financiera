@@ -1,35 +1,32 @@
 {% extends "basePrivada.html.twig" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block conteiner %}
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div id="loginbox" class="cajaLogin col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
         <div class="panel panel-info" >
           <div class="panel-heading">
               <div class="panel-title">Ingrese sus datos </div>
           </div>     
-          <div style="padding-top:30px" class="panel-body" >
-                            
-          <form id="loginform" class="form-horizontal" role="form">
-                                    
-          <div style="margin-bottom: 25px" class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Usuario ">                                        
-          </div>
-                                
-                            <div style="margin-bottom: 25px" class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input id="login-password" type="password" class="form-control" name="password" placeholder="Clave de acceso">
-                            </div>
-                                     
-                            <div style="margin-top:10px" class="form-group">
-                                <!-- Button -->
-                                 <div class="col-md-4 col-sm-12 controls">
-                                    <a id="btn-login" href="#" class="btn btn-success"style='width:100%'>Ingresar</a>
-                                 </div>
-                            </div>                 
-                        </form>     
-                        </div>                     
+          <div class="panel-body panel-login">              
+            <form id="loginform" class="form-horizontal" role="form">                    
+              <div class="input-group input-login">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Usuario ">                                        
+              </div>                 
+              <div class="input-group input-login">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input id="login-password" type="password" class="form-control" name="password" placeholder="Clave de acceso">
+              </div>
+                                         
+              <div class="form-group">
+                  <!-- Button -->
+                  <div class="col-md-4 col-sm-12 controls">
+                      <a id="btn-login" href="#" class="btn btn-success boton-enviar">Ingresar</a>
+                  </div>
+              </div>                 
+              </form>     
+            </div>                     
         </div>  
       </div>
 {% endblock %}
