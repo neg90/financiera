@@ -3,7 +3,6 @@
 session_start();
 require_once('../Modelo/conexDB.php');
 require_once('../Modelo/Clases/PDOusuario.php');
-require_once('Error.php');
 		
 	if (!isset($_SESSION['user']) && (htmlEntities(isset($_POST['user'])))) {
 		if (!empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))){
@@ -18,11 +17,10 @@ require_once('Error.php');
 				$verificado=PDOusuario::verificarUsuario($user,$clave);
 
 				if ($verificado == 1) {
-
 					$_SESSION['user'] = htmlEntities($_POST['user']);
 					header("Location: index.php");
-
 				} else {
+					//aca el usuario no existe por uno u otro campo
 	        		header("Location: index.php?aviso=4");
 				}
 			}catch(Exception $e){
@@ -31,16 +29,17 @@ require_once('Error.php');
 			}
 		}elseif (empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))) {
 	        header("Location: index.php?aviso=1");
+	        //falla la clave
 		}elseif (!empty(htmlEntities($_POST['user'])) && empty(htmlEntities($_POST['clave']))){
 	        header("Location: index.php?aviso=2");
+	        //falla el usuario
 		}else {
 	        header("Location: index.php?aviso=3");
+	        //quilombo en la franja de gaza
 		}
 	}elseif (isset($_SESSION['user'])) {
-		header("Location: index.php?aviso=3");
-	}
-	elseif (!isset($_SESSION['user'])) {
-		header("Location: index.php?aviso=5");
+		//el tipo tien sesion abierta
+		header("Location: index.php?aviso=4");
 	}
  
 ?>
