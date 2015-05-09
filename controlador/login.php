@@ -38,7 +38,7 @@ require_once('../modelo/PDOusuario.php');
 		}
 	}elseif (isset($_SESSION['user'])) {
 		//el tipo tien sesion abierta
-		header("Location: index.php?aviso=4");
+		header("Location: privado.php");
 	}
  
 ?>
