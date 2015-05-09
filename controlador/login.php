@@ -3,7 +3,6 @@
 session_start();
 require_once('../modelo/coneDB.php');
 require_once('../modelo/PDOusuario.php');
-		
 	if (!isset($_SESSION['user']) && (htmlEntities(isset($_POST['user'])))) {
 		if (!empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))){
 			$user = filter_var(htmlEntities($_POST['user']), FILTER_SANITIZE_STRING); //FILTER_SANITIZE_STRING -> Elimina etiquetas, opcionalmente elimina o codifica caracteres especiales.
