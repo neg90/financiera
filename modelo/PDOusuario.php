@@ -1,6 +1,6 @@
 <?php
 
-require_once '../modelo/conexDB.php';
+require_once 'coneDB.php';
 require_once 'usuario.php';
 
 class PDOusuario extends usuario{
@@ -15,9 +15,9 @@ class PDOusuario extends usuario{
 		try {
 		$conexion = new conexion; //creo instancia de la conexion
 		}catch (PDOException $e){}
-		$consulta = $conexion->prepare('SELECT * FROM usuario WHERE user = :user and clave = :clave');
-		$consulta->bindParam(':user',$unUser);
-		$consulta->bindParam(':clave',$unaClave);
+		$consulta = $conexion->prepare('SELECT * FROM acces WHERE Usuario = :Usuario and Clave = :Clave');
+		$consulta->bindParam(':Usuario',$unUser);
+		$consulta->bindParam(':Clave',$unaClave);
 		$consulta->execute();
 		$existe=$consulta->fetch();
 
@@ -28,4 +28,6 @@ class PDOusuario extends usuario{
 		}	
 			
 
+	}
 }
+?>

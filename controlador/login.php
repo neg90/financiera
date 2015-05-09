@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once('../Modelo/conexDB.php');
-require_once('../Modelo/Clases/PDOusuario.php');
+require_once('../modelo/coneDB.php');
+require_once('../modelo/PDOusuario.php');
 		
 	if (!isset($_SESSION['user']) && (htmlEntities(isset($_POST['user'])))) {
 		if (!empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))){
@@ -18,10 +18,10 @@ require_once('../Modelo/Clases/PDOusuario.php');
 
 				if ($verificado == 1) {
 					$_SESSION['user'] = htmlEntities($_POST['user']);
-					header("Location: index.php");
+					header("Location:privado.php");
 				} else {
 					//aca el usuario no existe por uno u otro campo
-	        		header("Location: index.php?aviso=4");
+	        		header("Location:index.php?aviso=4");
 				}
 			}catch(Exception $e){
 				//echo $e->getMessage();
