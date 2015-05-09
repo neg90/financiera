@@ -3,6 +3,79 @@
 {% block title %} Inicio {% endblock %}
 
 {% block conteiner %}
-<h3> Dis is Jome</h3>
+<div id="modulo1">
+  <h1>Titulo Mod</h1>
+  <h5 class="desc-mod1">
+
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo
+
+  </h5>
+  <h6 class="cuerpo-mod1">
+    <ul>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+      <li> Lorem ipsum </li>
+    </ul>
+  </h5>
+</div>
+<div id="modulo2">
+
+  <p>
+    Complete sus datos en el siguiente formulario, nos pondremos en contacto con usted a la brevedad. 
+    </br></br> Los campos marcados con un asterisco (*) son <b>obligatorios</b>.
+  </p>
+  <label>Nombre y Apellido</label> <span class="ast">*</span>
+  <div class="input-group">
+    <span class="input-group-addon" id="sizing-addon2">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    </span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon2">
+  </div>
+
+  <label>Teléfono </label> <span class="ast">*</span>
+  <div class="input-group">
+    <span class="input-group-addon" id="sizing-addon2">
+      <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+    </span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon2">
+  </div>
+
+  <label>Correo electrónico</label> <span class="ast">*</span>
+  <div class="input-group">
+    <span class="input-group-addon" id="sizing-addon2">
+      <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+    </span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon2">
+  </div>
+
+  <label>CUIT / CUIL</label> <span class="ast">*</span>
+  <div class="input-group">
+    <span class="input-group-addon" id="sizing-addon2">
+      <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+    </span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon2">
+  </div>
+
+  <label>Comentario</label>
+  <div class="input-group">
+    <textarea class="form-control" rows="5" cols="60" style="overflow:auto;resize:none"></textarea>
+  </div>
+
+  <div class="g-recaptcha" data-sitekey="6LfllwYTAAAAACjgHz0XYUxhxP9-3F-HLffykek7"></div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle">
+      Enviar
+    </button>
+  </div>
+
+</div>
 {% endblock %}
 

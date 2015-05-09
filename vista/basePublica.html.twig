@@ -6,16 +6,33 @@
     		<meta name="viewport" content="width=device-width, initial-scale=1">
     		<link rel="shortcut icon" href="favicon.ico" />
     		<link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-    		<link href="../css/admin.css" rel="stylesheet" media="screen">
+    		<link href="../css/estilo.css" rel="stylesheet" media="screen">
             <title>{% block title %}{% endblock %} - Financiera Naveyra</title>
         {% endblock %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body>
-        <div id="conteiner">{% block conteiner %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-  				<hr style="width:100%;position: absolute; bottom: 25px;">
-            {% endblock %}
+        <div class="info_contacto">
+                <li class="icono telefono">
+                    <p>financiera.naveyra@gmail.com</p>
+                </li>
+                <li class="icono email">
+                    <p>(011) 15-3858-7990</p>
+                </li>
+        </div>
+
+        <div id="wrapper">
+            <div class="header">
+                <div class="logo">
+                    <span id="nombre-empresa">Naveyra</span>
+                    <span id="desc-empresa">Compañía Financiera</span>
+
+                </div>
+            </div>
+            <div id="conteiner" class="contenedor">{% block conteiner %}{% endblock %}</div>
+            <div class="footer">
+                <p>Footer</p>
+            </div>
         </div>
     </body>
 </html>
