@@ -1,0 +1,177 @@
+@font-face {
+   font-family: Lifestyle;
+   font-style: normal;
+   font-weight: normal;
+   src: url('../fonts/Lifestyle M54.ttf');
+}
+
+/* Opificio-Serif-regular.ttf */
+
+@font-face {
+   font-family: Opificio;
+   font-style: normal;
+   font-weight: normal;
+   src: url('../fonts/Opificio-Serif-regular.ttf');
+}
+
+
+body{
+	background-image:url('../img/bg.jpg');
+}
+
+#wrapper{  
+	position: relative;
+  	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+  	margin: 0px auto;
+  	width:80%;
+  	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.header{
+	background-color:#111;
+	height:80px;
+	opacity:0.7;
+	margin:auto;
+	display:block;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.logo span{
+	color:#fff;
+	margin-left:30px;
+	display:block;
+}
+
+.logo #nombre-empresa{
+	font-size: 40px;
+}
+
+.logo #desc-empresa{
+
+}
+
+
+#conteiner{
+	background-color:#fff;
+	margin:auto;
+	display:block;
+	min-height: 700px;
+
+}
+
+.info_contacto{
+	text-align: right;
+	margin:auto;
+	display:block;
+	width:80%;
+	margin-top:20px;
+}
+
+.icono{
+	margin-right: 25px;
+  	padding: 5px;	
+  	background-repeat: no-repeat;
+  	list-style: none;
+  	display:inline-block;
+  	background-size: 20px;	
+}
+
+.icono.telefono{
+	background-image: url('../img/iconos/telefono.png');
+  	background-position: 0px 9px;
+}
+
+.icono.email{
+	background-image: url('../img/iconos/email.png');
+  	background-position: 0px 9px;
+}
+
+.icono p{
+	margin-left:25px;
+	font-weight: bold;
+	margin-top:2px;
+}
+
+.footer{
+	background-color:#bbb;
+	opacity:0.7;
+	margin:auto;
+	display:block;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.footer p{
+	padding:5px;
+	text-align: right;
+	margin-right:20px;
+}
+
+#modulo1{
+	display:block;
+	float:left;
+	width:400px;
+	padding:20px;
+	margin-left:20px;
+	margin-top:30px;
+	font-family: 'Sans-serif';
+	background-image:url('../img/bg-bloque.png');
+	background-repeat: repeat-x;
+	border:1px solid #ccc;
+	border-radius: 10px;
+	min-height:400px;
+	padding-top: 0px;
+}
+
+#modulo1 h1{
+	color:#337ab7;
+	font-weight: bold;	
+}
+
+.cuerpo-mod1 ul li{
+	padding:5px;
+}
+
+#modulo2{
+	display:block;
+	float:right;
+	width:490px;
+	padding: 30px;
+	font-family: 'Sans-serif';
+}
+
+ #modulo2 input.form-control, textarea.form-control{
+	color:#777;
+}
+
+#modulo2 .input-group{
+	margin-left:10px;
+	margin-bottom:15px;
+}
+
+#modulo2 p{
+	font-size: 13px;
+	padding:10px;
+	padding-left: 0px;
+	text-align: justify;
+}
+
+#modulo2 label{
+	font-size: 11px;
+	font-family: 'Opificio';
+	display:inline-block;
+}
+
+#modulo2 span.ast{
+	font-size:12px;
+	display:inline-block;
+	font-weight: bold;
+}
+
+#modulo2 .btn-group{
+	float:right;
+}
