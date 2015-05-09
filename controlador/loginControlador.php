@@ -2,7 +2,7 @@
 
 require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
 
-class ControladorPublico {
+class ControladorLogin {
 
 	public function Principal(){
 
@@ -10,9 +10,9 @@ class ControladorPublico {
 		$loader = new Twig_Loader_Filesystem('../vista');
 	    $twig = new Twig_Environment($loader, array('debug' => 'false'));//'cache' => '../cache',')); 
 		
-		$template = $twig->loadTemplate('home.html.twig');
+		$template = $twig->loadTemplate('login.html.twig');
 		echo $template->render(array());
-		
+	
 	}		
 }
 
