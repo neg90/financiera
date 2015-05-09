@@ -1,0 +1,36 @@
+{% extends "basePrivada.html.twig" %}
+
+{% block title %}Cargar Noticia{% endblock %}
+
+{% block conteiner %}
+  <div class="container-fluid">
+      <div class="text-center">
+        <h1>Bootstrap forms</h1>
+        <p class="lead">Crea o edita noticias desde esta pagina. </p>
+      </div>
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-6 col-lg-8">
+            <div class="form-group">
+              <label for="titulo" class="col-md-4 control-label">Titulo:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-8">
+            <div class="form-group">
+              <label for="pienota" class="col-md-4 control-label">Nota:</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="pienota" placeholder="Nota">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </form>
+      
+</div>
+{% endblock %}
