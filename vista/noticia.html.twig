@@ -12,38 +12,39 @@
         <script src="../plugins/ckeditor/adapters/jquery.js"></script>
         <script type="text/javascript">$( document ).ready( function() {
           $( 'textarea#editor1' ).ckeditor();} );
-        </script>
+        </script>   
         
-
-        
+          
  {% endblock %}
  {% block title %}Cargar Noticia{% endblock %}
 
   {% block conteiner %}
-    <div class="col-6 col-lg-9 ">
-       <div class="panel-heading"> 
-            <h3>Crear y editar noticias desde esta pagina.</h3>
-       </div>
+    <div class="col-6  " style="">
+      <div style="margin:0 auto 0 auto; ">
+       <div class="panel-heading" > 
+            <h3>Mis Noticias</h3>
+       </div >
        <div class="panel-body">
           <form role="form" id="feedbackForm">
-            <span class="help-block">Titulo</span>
+            <span class="help-block">Titulo:</span>
                 <div class="form-group">
                   <input type="text" class="form-control" id="name" name="name" placeholder="Titulo">             
                 </div>
                 <div class="form-group">
-                  <span class="help-block">Nota</span>
+                  <span class="help-block">Nota:</span>
                   <input type="email" class="form-control" id="email" name="email" placeholder="Pie de nota">    
                 </div>
                 <div class="form-group">
-                  <span class="help-block">Noticia</span>
+                  <span class="help-block">Noticia:</span>
                   <textarea class="ckeditor" name="editor1"></textarea>
                 </div>
                 <div class="form-group">
-                  <span class="help-block">Aviso</span>
+                  <span class="help-block">Aviso:</span>
                   <textarea class="ckeditor" name="editao2"></textarea>
                 </div>
           </form>
         </div>
+      </div>
     </div>
          
   {% endblock %}
