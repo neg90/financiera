@@ -7,56 +7,15 @@
         <link href="../css/admin.css" rel="stylesheet" media="screen">
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="../js/bootstrap.min.js"></script>
-        <!-- Include jQuery, this can be omitted if it's already included -->
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <!-- Include the default theme -->
-        <link rel="stylesheet" href="../plugins/BBcode/minified/themes/default.min.css" type="text/css" media="all" />
-        <!-- Include the editors JS -->
-        <script type="text/javascript" src="../plugins/BBcode/minified/jquery.sceditor.bbcode.min.js"></script>
-        <script type="text/javascript">
-            // Create the editor
-            $("textarea").sceditor({
-              // Option 1
-              plugins: "bbcode",
-             
-              // Option 2
-              toolbar: "bold,italic,underline|source",
-             
-              // Option 3
-              locale: "no-NB"
-            });
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="../plugins/ckeditor/ckeditor.js"></script>
+        <script src="../plugins/ckeditor/adapters/jquery.js"></script>
+        <script type="text/javascript">$( document ).ready( function() {
+          $( 'textarea#editor1' ).ckeditor();} );
         </script>
-        <script>
-          var loadCSS = function(url, callback){
-            var link = document.createElement('link');
-            link.type = 'text/css';
-            link.rel = 'stylesheet';
-            link.href = url;
-            link.id = 'theme-style';
-            document.getElementsByTagName('head')[0].appendChild(link);
-            var img = document.createElement('img');
-            img.onerror = function(){
-              if(callback) callback(link);
-            }
-            img.src = url;
-          }
-          $(document).ready(function() {
-            var initEditor = function() {
-              $("textarea").sceditor({
-                plugins: 'bbcode',
-                style: "../minified/jquery.sceditor.default.min.css"
-              });
-            };
-            $("#theme").change(function() {
-              var theme = "../minified/themes/" + $(this).val() + ".min.css";
-              $("textarea").sceditor("instance").destroy();
-              $("link:first").remove();
-              $("#theme-style").remove();
-              loadCSS(theme, initEditor);
-            });
-            initEditor();
-          });
-        </script>
+        
+
+        
  {% endblock %}
  {% block title %}Cargar Noticia{% endblock %}
 
@@ -73,15 +32,16 @@
                 </div>
                 <div class="form-group">
                   <span class="help-block">Nota</span>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Pie de nota">
-                  
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Pie de nota">    
                 </div>
                 <div class="form-group">
-                  <span class="help-block">Cuerpo del Mensaje</span>
-                  <textarea rows="10" cols="100" class="sceditor" id="message" name="message" placeholder="Message"></textarea>
+                  <span class="help-block">Noticia</span>
+                  <textarea class="ckeditor" name="editor1"></textarea>
                 </div>
-              
-                <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg" style="display: block; margin-top: 10px;">Envia</button>
+                <div class="form-group">
+                  <span class="help-block">Aviso</span>
+                  <textarea class="ckeditor" name="editao2"></textarea>
+                </div>
           </form>
         </div>
     </div>
