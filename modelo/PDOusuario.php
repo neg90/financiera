@@ -29,5 +29,17 @@ class PDOusuario extends usuario{
 			
 
 	}
+
+
+	public static function modificar($user,$clave){
+		try {
+		$conexion = new conexion; //creo instancia de la conexion
+		}catch (PDOException $e){}
+		$consulta = $conexion->prepare('UPDATE alimento SET Usuario = Usuario AND Clave = Clave  WHERE Usuario = :Usuario');
+		$consulta->bindParam(':Usuario',$unUser);
+		$consulta->bindParam(':Clave',$unaClave);
+		$consulta->execute();
+		
+	}
 }
 ?>
