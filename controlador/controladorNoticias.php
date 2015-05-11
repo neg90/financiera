@@ -2,7 +2,7 @@
 	require_once('../modelo/coneDB.php');
 
 
-class controladorMisDatos {
+class controladorNoticias	 {
 
 	static function Modificar(){
 		Twig_Autoloader::register();
@@ -10,7 +10,7 @@ class controladorMisDatos {
 	  	$twig = new Twig_Environment($loader, array('cache' => '../cache','debug' => 'false')); 
 		//usuario
 		//clave
-		$template = $twig->loadTemplate('datosUser.html.twig');
+		$template = $twig->loadTemplate('noticia.html.twig');
 		echo $template->render(array());
 	}	
 }

@@ -1,11 +1,11 @@
 <?php
 
 require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
+require_once 'controladorMisDatos.php';
+require_once 'controladorNoticias.php';
 
 
- 	Twig_Autoloader::register();
-  	$loader = new Twig_Loader_Filesystem('../vista');
-  	$twig = new Twig_Environment($loader, array('cache' => '../cache','debug' => 'false')); 
+ 	
 
   	session_start();
 	if (!isset($_SESSION['user'])){
@@ -15,15 +15,14 @@ require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
 		$controlador=htmlEntities(@$_GET['c']);  
 		if (!empty($controlador)){
 			if ($controlador=='misdatos') {
-				controladorMisDatos::modificar();
-			//$template = $twig->loadTemplate('datosUser.html.twig');
-			//echo $template->render(array());
-			//Enrrutador{
+				controladorMisDatos::Modificar();
 			}elseif ($controlador=='noticias') {
-				# code...
+				controladorNoticias::Modificar();
 			}elseif ($controlador=='actContacto') {
-				# code...
+				
 			}	
+		}else{
+			controladorNoticias::Modificar();
 		}
 
 	}
