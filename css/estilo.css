@@ -32,18 +32,17 @@ body{
 
 .header{
 	background-color:#111;
-	height:80px;
+	height:84px;
 	opacity:0.7;
 	margin:auto;
 	display:block;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
+	text-align: center;
 }
 
-.logo span{
-	color:#fff;
-	margin-left:30px;
-	display:block;
+.logo img{
+	height:90px;
 }
 
 .logo #nombre-empresa{
@@ -59,8 +58,7 @@ body{
 	background-color:#fff;
 	margin:auto;
 	display:block;
-	min-height: 700px;
-
+	min-height: 1120px;
 }
 
 .info_contacto{
@@ -107,29 +105,28 @@ body{
 
 .footer p{
 	padding:5px;
-	text-align: right;
+	text-align: center;
 	margin-right:20px;
 }
 
 #modulo1{
 	display:block;
 	float:left;
-	width:400px;
+	width:440px;
 	padding:20px;
 	margin-left:20px;
-	margin-top:30px;
+	margin-top:15px;
 	font-family: 'Sans-serif';
-	background-image:url('../img/bg-bloque.png');
-	background-repeat: repeat-x;
-	border:1px solid #ccc;
-	border-radius: 10px;
-	min-height:400px;
+	min-height:550px;
 	padding-top: 0px;
 }
 
-#modulo1 h1{
-	color:#337ab7;
-	font-weight: bold;	
+#modulo1 h1, #modulo2 h1{
+	color:#00a4d9;
+}
+
+#modulo1 .desc-mod1{
+	text-align: justify;
 }
 
 .cuerpo-mod1 ul li{
@@ -142,6 +139,7 @@ body{
 	width:490px;
 	padding: 30px;
 	font-family: 'Sans-serif';
+	margin-top:-90px;
 }
 
  #modulo2 input.form-control, textarea.form-control{
@@ -150,7 +148,7 @@ body{
 
 #modulo2 .input-group{
 	margin-left:10px;
-	margin-bottom:15px;
+	margin-bottom:8px;
 }
 
 #modulo2 p{
@@ -181,4 +179,68 @@ body{
 .btn-primary{
 	padding: 15px 50px 15px 50px;
 	width:150px;
+}
+
+.col{
+	width: 250px;
+  	height: 400px;
+  	border: 2px solid #00a4d9;
+  	border-radius: 20px;
+  	display: inline-block;
+  	margin: 10px;
+  	background-image: url('../img/bg-bloque.png');
+  	background-repeat: repeat-x;
+}
+
+.col .imgColumn{
+	height: 200px;
+	width:200px;
+	display:block;
+	margin:auto;
+}
+
+.col h3{
+	margin: 0;
+  	text-align: center;
+  	margin-top: 10px;
+  	color: #00a4d9;
+}
+
+.col p{
+  	text-align: justify;
+  	margin-top: 10px;
+}
+
+.tresColumnas{
+	width: 850px;
+  	display: block;
+  	margin: auto;
+  	padding: 20px;
+  	float: none;
+  	height: 480px;
+}
+
+.clear{
+	clear:both;
+}
+
+.flecha{
+	margin:auto;
+	display:block;
+	border-top:3px solid #fff;
+}
+
+.flecha img{
+	width:87px;
+	margin-top:-4px;
+	margin-left:-25px;
+}
+
+.bloque-bottom{
+	border-top:1px solid #ccc;
+	background-image: url('../img/bg-bloque.png'); 
+  	background-repeat: repeat-x;
+  	height:500px;
+}
+
 }
