@@ -129,8 +129,9 @@ body{
 	text-align: justify;
 }
 
-.cuerpo-mod1 ul li{
+.cuerpo-mod1 ul span{
 	padding:5px;
+	padding-right:100px;
 }
 
 #modulo2{
