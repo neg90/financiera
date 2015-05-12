@@ -29,5 +29,28 @@ class PDOusuario extends usuario{
 			
 
 	}
+
+	public function buscarUser ($user,$clave){
+		try {
+		$conexion = new conexion; //creo instancia de la conexion
+		}catch (PDOException $e){}
+		$consulta = $conexion->prepare('SELECT * FROM acces WHERE Usuario = :Usuario and Clave = :Clave');
+		$consulta->execute();
+		$existe=$consulta->fetch();
+		
+
+	}
+
+
+	public static function modificar($user,$clave){
+		try {
+		$conexion = new conexion; //creo instancia de la conexion
+		}catch (PDOException $e){}
+		$consulta = $conexion->prepare('UPDATE acces SET Usuario = Usuario AND Clave = Clave  WHERE Usuario = :Usuario');
+		$consulta->bindParam(':Usuario',$unUser);
+		$consulta->bindParam(':Clave',$unaClave);
+		$consulta->execute();
+		
+	}
 }
 ?>

@@ -1,19 +1,30 @@
 <?php
 
-require_once '../Twig/Autoloader.php';	
-	
+require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
+require_once 'controladorMisDatos.php';
+require_once 'controladorNoticias.php';
 
-try {
- 	Twig_Autoloader::register();
-  	$loader = new Twig_Loader_Filesystem('../vista');
-  	$twig = new Twig_Environment($loader, array(//'cache' => '../cache','
-    'debug' => 'false')); 
+
+ 	
 
   	session_start();
 	if (!isset($_SESSION['user'])){
+		ControladorDeAcceso::principal();
 		//No deberias estar aca pero buen intento campeon
 	}else{
-		//Enrrutador
-		
+		$controlador=htmlEntities(@$_GET['c']);  
+		if (!empty($controlador)){
+			if ($controlador=='misdatos') {
+				controladorMisDatos::Modificar();
+			}elseif ($controlador=='noticias') {
+				controladorNoticias::Modificar();
+			}elseif ($controlador=='actContacto') {
+				
+			}	
+		}else{
+			controladorNoticias::Modificar();
+		}
+
 	}
+	
 ?>
