@@ -17,7 +17,7 @@ require_once('../modelo/PDOusuario.php');
 
 				if ($verificado == 1) {
 					$_SESSION['user'] = htmlEntities($_POST['user']);
-					header("Location:privado.php?c=misdatos");
+					header("Location:privado.php?c=misdatos&a=render");
 				} else {
 					//aca el usuario no existe por uno u otro campo
 	        		header("Location:index.php?aviso=4");
@@ -38,7 +38,7 @@ require_once('../modelo/PDOusuario.php');
 		}
 	}elseif (isset($_SESSION['user'])) {
 		//el tipo tien sesion abierta
-		header("Location:privado.php?c=misdatos");
+		header("Location:privado.php?c=misdatos&a=render");
 	}
  
 ?>

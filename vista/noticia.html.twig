@@ -24,7 +24,7 @@
             <h3>Mis Noticias</h3>
        </div>
        <div class="panel-body">
-          <form role="form" id="nuevaNoticia">
+          <form role="form" id="nuevaNoticia" action="controladorMisDatos.php?c=misdatos&a=modificar" method="POST">
             <span class="help-block">Titulo:</span>
                 <div class="form-group">
                   <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo">             
@@ -41,7 +41,9 @@
                   <span class="help-block">Aviso:</span>
                   <textarea class="ckeditor" name="editor2"></textarea>
                 </div>
+                <button id="btn-login" class="btn btn-success boton-enviar" type="submit">Guardar</button>
           </form>
+
         </div>
       </div>
     </div>
