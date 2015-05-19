@@ -58,7 +58,8 @@ body{
 	background-color:#fff;
 	margin:auto;
 	display:block;
-	min-height: 1120px;
+	/* min-height: 1120px;*/
+	min-height: 670px;
 }
 
 .info_contacto{
@@ -109,7 +110,7 @@ body{
 	margin-right:20px;
 }
 
-#modulo1{
+#modulo1, #modulo3{
 	display:block;
 	float:left;
 	width:440px;
@@ -117,19 +118,23 @@ body{
 	margin-left:20px;
 	margin-top:15px;
 	font-family: 'Sans-serif';
-	min-height:550px;
+	min-height:360px;
 	padding-top: 0px;
 }
 
-#modulo1 h1, #modulo2 h1{
+#modulo3{
+	min-height:300px;
+}
+
+#modulo1 h1, #modulo2 h1, #modulo3 h1{
 	color:#00a4d9;
 }
 
-#modulo1 .desc-mod1{
+#modulo1 .desc-mod1, #modulo3 .desc-mod1{
 	text-align: justify;
 }
 
-.cuerpo-mod1 ul span{
+ul span{
 	padding:5px;
 	padding-right:100px;
 }
@@ -140,7 +145,8 @@ body{
 	width:490px;
 	padding: 30px;
 	font-family: 'Sans-serif';
-	margin-top:-90px;
+	/* margin-top:-90px; */
+	margin-top:-16px;
 }
 
  #modulo2 input.form-control, textarea.form-control{
@@ -241,7 +247,7 @@ body{
 	border-top:1px solid #ccc;
 	background-image: url('../img/bg-bloque.png'); 
   	background-repeat: repeat-x;
-  	height:500px;
+  	/* height:500px; */
 }
 
 }
