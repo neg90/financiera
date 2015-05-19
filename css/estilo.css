@@ -59,7 +59,7 @@ body{
 	margin:auto;
 	display:block;
 	/* min-height: 1120px;*/
-	min-height: 670px;
+	min-height: 650px;
 }
 
 .info_contacto{
@@ -107,7 +107,6 @@ body{
 .footer p{
 	padding:5px;
 	text-align: center;
-	margin-right:20px;
 }
 
 #modulo1, #modulo3{
@@ -123,11 +122,16 @@ body{
 }
 
 #modulo3{
-	min-height:300px;
+	min-height:257px;
 }
 
 #modulo1 h1, #modulo2 h1, #modulo3 h1{
 	color:#00a4d9;
+}
+
+h5{
+	font-size: 13px;
+	padding-top:10px;
 }
 
 #modulo1 .desc-mod1, #modulo3 .desc-mod1{
