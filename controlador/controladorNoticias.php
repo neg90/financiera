@@ -4,7 +4,7 @@
 
 class controladorNoticias	 {
 
-	static function Modificar(){
+	static function render(){
 		Twig_Autoloader::register();
 	  	$loader = new Twig_Loader_Filesystem('../vista');
 	  	$twig = new Twig_Environment($loader, array('cache' => '../cache','debug' => 'false')); 

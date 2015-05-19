@@ -10,19 +10,26 @@ require_once 'controladorNoticias.php';
   	session_start();
 	if (!isset($_SESSION['user'])){
 		ControladorDeAcceso::principal();
-		//No deberias estar aca pero buen intento campeon
+		//No deberias estar aca pero buen intento campeon de la luz.
 	}else{
-		$controlador=htmlEntities(@$_GET['c']);  
-		if (!empty($controlador)){
-			if ($controlador=='misdatos') {
-				controladorMisDatos::Modificar();
-			}elseif ($controlador=='noticias') {
-				controladorNoticias::Modificar();
+		$controlador=htmlEntities(@$_GET['c']); 
+		$accion=htmlEntities(@$_GET['a']); 
+		if ((!empty($controlador)) and (!empty($accion))){
+			if (($controlador=='misdatos') and ($accion=='render')) {
+				controladorMisDatos::render();
+			}elseif (($controlador=='misdatos') and ($accion=='modificar')) {
+				controladorMisDatos::modificar();
+			}
+
+
+			elseif ($controlador=='noticias') {
+				controladorNoticias::render();
 			}elseif ($controlador=='actContacto') {
-				
+				controladorContacto::render();
 			}	
 		}else{
-			controladorNoticias::Modificar();
+			//Avisar q pifio path
+			ControladorDeAcceso::principal();
 		}
 
 	}
