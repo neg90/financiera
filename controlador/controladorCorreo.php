@@ -3,6 +3,30 @@
 
 
 class controladorCorreo	 {
+	//evita la inyeccion de mail
+	static function ValidarDatos($campo){
+		//Array con las posibles cabeceras a utilizar por un spammer
+		$badHeads = array("Content-Type:",
+		"MIME-Version:",
+		"Content-Transfer-Encoding:",
+		"Return-path:",
+		"Subject:",
+		"From:",
+		"Envelope-to:",
+		"To:",
+		"bcc:",
+		"cc:");
+		//Comprobamos que entre los datos no se encuentre alguna de
+		//las cadenas del array. Si se encuentra alguna cadena se
+		//dirige a una página de Forbidden
+		foreach($badHeads as $valor){
+			if(strpos(strtolower($campo), strtolower($valor)) !== false){
+			//header( "HTTP/1.0 403 Forbidden");
+			echo "que hacemo";
+			exit;
+			}
+		}
+	}
 
 	static function enviar(){
 		$fallo = false;
@@ -10,6 +34,12 @@ class controladorCorreo	 {
 		Twig_Autoloader::register();
 	  	$loader = new Twig_Loader_Filesystem('../vista');
 	  	$twig = new Twig_Environment($loader, array('cache' => '../cache','debug' => 'false')); 
+
+	  	controladorCorreo::ValidarDatos(@$_POST['nomyap']);
+	  	controladorCorreo::ValidarDatos(@$_POST['tel']);
+	  	controladorCorreo::ValidarDatos(@$_POST['email']);
+	  	controladorCorreo::ValidarDatos(@$_POST['cc']);
+	  	controladorCorreo::ValidarDatos(@$_POST['comentario']);
 
 	  	if  (!empty(@$_POST['nomyap'])){
 	  		$nomyap = htmlEntities(@$_POST['nomyap']);
@@ -51,13 +81,13 @@ class controladorCorreo	 {
 			$mail->isSMTP();                                      
 			$mail->Host = 'smtp.gmail.com';  
 			$mail->SMTPAuth = true;                              
-			$mail->Username = 'neg90.ng@gmail.com';              
-			$mail->Password = 'kapanga123';                          
+			$mail->Username = 'financiera.naveyra@gmail.com';              
+			$mail->Password = 'samsung2015';                          
 			$mail->SMTPSecure = 'tls';                          
 			$mail->Port = 587;  
 
 			$mail->FromName = 'Sistema Financiera Naveyra';
-			$mail->addAddress('neg90.ng@gmail.com');    
+			$mail->addAddress('financiera.naveyra@gmail.com');    
 
 			$mail->Subject = 'Pedido de informacion';
 			
@@ -76,10 +106,10 @@ class controladorCorreo	 {
 			
 	    	$mail->Body = $mensaje;
 			if(!$mail->send()) {
-	   			 echo 'Message could not be sent.';
+	   			 echo 'No se pudo enviar el mensaje';
 	    		 echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
-	    		echo 'Message has been sent';
+	    		echo 'El mensaje fue enviado';
 	        }
 
 	  	}else{
