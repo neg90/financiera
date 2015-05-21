@@ -1,6 +1,6 @@
 <?php
 	require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-
+	include_once('publico.php');
 
 class controladorCorreo	 {
 	//evita la inyeccion de mail
@@ -29,6 +29,7 @@ class controladorCorreo	 {
 	}
 
 	static function enviar(){
+		$_SESSION['tokensMail'] = $_SESSION['tokensMail']++;
 		$fallo = false;
 		$seEnvia = true;
 		Twig_Autoloader::register();
@@ -103,13 +104,18 @@ class controladorCorreo	 {
 	    	$mensaje.= "HORA:     ".date("h:i:s a")."\n\n";   	
 	    	$mensaje.= "---------------------------------- \n";
 	    	$mensaje.= "Enviado desde www.naveyra.com.ar \n";
-			
 	    	$mail->Body = $mensaje;
 			if(!$mail->send()) {
-	   			 echo 'No se pudo enviar el mensaje';
-	    		 echo 'Mailer Error: ' . $mail->ErrorInfo;
+				//Ojo atento por q por no tener captch te puede reenviar el formulario!
+				//Si aprieta f5 estas frito angelito
+				$template = $twig->loadTemplate('home.html.twig');
+				echo $template->render(array('enviado'=>2));
+				
 			} else {
-	    		echo 'El mensaje fue enviado';
+
+	    		$template = $twig->loadTemplate('home.html.twig');
+				echo $template->render(array('enviado'=>1));
+				exit();
 	        }
 
 	  	}else{

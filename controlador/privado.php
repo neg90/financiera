@@ -3,12 +3,8 @@
 require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
 require_once 'controladorMisDatos.php';
 require_once 'controladorNoticias.php';
-require_once 'controladorCorreo.php';
-$controlador=htmlEntities(@$_GET['c']); 
-		$accion=htmlEntities(@$_GET['a']); 
-	if (($controlador=='correo') and ($accion=='enviar')) {
-		controladorCorreo::enviar();
-	}
+
+
   	session_start();
 	if (!isset($_SESSION['user'])){
 		ControladorDeAcceso::principal();
