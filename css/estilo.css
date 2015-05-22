@@ -59,7 +59,7 @@ body{
 	margin:auto;
 	display:block;
 	/* min-height: 1120px;*/
-	min-height: 650px;
+	min-height: 750px;
 }
 
 .info_contacto{
@@ -89,6 +89,11 @@ body{
   	background-position: 0px 9px;
 }
 
+.icono.mapa{
+	background-image: url('../img/iconos/mapa.png');
+  	background-position: 0px 9px;
+}
+
 .icono p{
 	margin-left:25px;
 	font-weight: bold;
@@ -112,7 +117,7 @@ body{
 #modulo1, #modulo3{
 	display:block;
 	float:left;
-	width:440px;
+	width:490px;
 	padding:20px;
 	margin-left:20px;
 	margin-top:15px;
@@ -130,7 +135,7 @@ body{
 }
 
 h5{
-	font-size: 13px;
+	font-size: 14px;
 	padding-top:10px;
 }
 
@@ -140,7 +145,7 @@ h5{
 
 ul span{
 	padding:5px;
-	padding-right:100px;
+	padding-right:20px;
 }
 
 #modulo2{

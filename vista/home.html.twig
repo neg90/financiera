@@ -28,18 +28,19 @@
   <div id="modulo1">
     <h1>Servicios</h1>
     <h5 class="desc-mod1">
-
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non ummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci.
+    NAVEYRA Compañía Financiera es una empresa joven formada por un equipo con experiencia en el rubro financiero. <br><br>
+    Brindamos asistencia financiera de una forma ágil, simple y rápida a pymes, comercios, negocios, personas físicas y personas jurídicas.<br><br>
+    Estamos en la zona de Puerto Madero, Capital Federal.
 
     </h5>
     <h6 class="cuerpo-mod1">
       <ul>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Lorem ipsum dolor sit amet </span>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Quisque rutrum </span>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Aenean leo ligula</span>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Maecenas tempus, </span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Préstamos.  </span><br>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Descuento de cheques de terceros.</span><br>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Descuento de cheques de terceros al dia.</span><br>
+     <!--   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Maecenas tempus, </span>
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Tellus eget condimentum rhoncus </span>
-
+      -->
       </ul>
     </h6>
   </div>
@@ -49,17 +50,25 @@
   </div>
 -->
   <div id="modulo2">
+    <!--Alertas de mail-->
+    {% if enviado == 1 %}
+      <div class="alert alert-success">El mensaje fue enviado correctamente.</div>
+    {% elseif enviado == 2 %}
+      <div class="alert alert-danger">No se pudo enviar el mensaje.</div>
+    {% endif %}
+    <!--Fin de alertas de mail-->
     <h1>Contactenos</h1>
     <p>
       Complete sus datos en el siguiente formulario, nos pondremos en contacto con usted a la brevedad. 
       </br></br> Los campos marcados con un asterisco (*) son <b>obligatorios</b>.
     </p>
+  <form role="form" action="publico.php?c=correo&a=enviar" method="POST">
     <label>Nombre y Apellido</label> <span class="ast">*</span>
     <div class="input-group">
       <span class="input-group-addon" id="sizing-addon2">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
       </span>
-      <input type="text" class="form-control" aria-describedby="sizing-addon2">
+      <input type="text" class="form-control" aria-describedby="sizing-addon2" name="nomyap" required/>
     </div>
 
     <label>Teléfono </label> <span class="ast">*</span>
@@ -67,7 +76,7 @@
       <span class="input-group-addon" id="sizing-addon2">
         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
       </span>
-      <input type="text" class="form-control" aria-describedby="sizing-addon2">
+      <input type="tel" class="form-control" aria-describedby="sizing-addon2" name="tel"  pattern="[0-9/-()]{1,15}" required/>
     </div>
 
     <label>Correo electrónico</label> <span class="ast">*</span>
@@ -75,7 +84,7 @@
       <span class="input-group-addon" id="sizing-addon2">
         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
       </span>
-      <input type="text" class="form-control" aria-describedby="sizing-addon2">
+      <input type="email" class="form-control" aria-describedby="sizing-addon2" name="email" required/>
     </div>
 
     <label>CUIT / CUIL</label> <span class="ast">*</span>
@@ -83,30 +92,43 @@
       <span class="input-group-addon" id="sizing-addon2">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
       </span>
-      <input type="text" class="form-control" aria-describedby="sizing-addon2">
+      <input type="text" class="form-control" aria-describedby="sizing-addon2" name="cc"  pattern="[0-9/-()]{1,15}" required/>
     </div>
 
     <label>Comentario</label>
     <div class="input-group">
-      <textarea class="form-control" rows="3" cols="60" style="overflow:auto;resize:none"></textarea>
+      <textarea class="form-control" rows="3" cols="60" style="overflow:auto;resize:none" name="comentario"  pattern="[A-Za-z.,!?¿]{1,254}"></textarea>
     </div>
+
 
     
 
     <div class="btn-group">
-      <button type="button" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary">
         Enviar
       </button>
+
+  </form>
     </div>
   </div>
     <div id="modulo3">
-    <h1>Requisitos</h1>
+    <h1>Datos</h1>
     <h5 class="desc-mod1">
-
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non ummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.
-
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Los prèstamos son devueltos con cheques propios.</span>  <br>
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Poseer chequera con antigüedad mayor a 12 meses.</span><br>
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Plazo del préstamo hasta 120 días.</span><br>
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Hasta 4 cuotas mensuales.</span><br>
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">TNA: 60%. </span><br>
+      
+        
+       
+     
+       
     </h5>
   </div>
+
 </div>
+
+
 {% endblock %}
 

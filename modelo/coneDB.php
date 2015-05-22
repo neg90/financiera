@@ -3,7 +3,7 @@
 
    private $tipo_de_base = 'mysql';       //todos los atributos privados
    private $host = 'localhost';
-   private $nombre_de_base = 'fn';
+   private $nombre_de_base = 'm2000225_fn';
    private $usuario = 'root'; 
    private $contrasena = 'root';
 

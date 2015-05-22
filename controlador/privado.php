@@ -5,8 +5,6 @@ require_once 'controladorMisDatos.php';
 require_once 'controladorNoticias.php';
 
 
- 	
-
   	session_start();
 	if (!isset($_SESSION['user'])){
 		ControladorDeAcceso::principal();
@@ -19,12 +17,14 @@ require_once 'controladorNoticias.php';
 				controladorMisDatos::render();
 			}elseif (($controlador=='misdatos') and ($accion=='modificar')) {
 				controladorMisDatos::modificar();
-			}
-
-
-			elseif ($controlador=='noticias') {
+			}elseif (($controlador=='correo') and ($accion=='enviar')) {
+				controladorCorreo::enviar();
+			}elseif (($controlador=='noticias') and ($accion=='render')){
 				controladorNoticias::render();
-			}elseif ($controlador=='actContacto') {
+			}elseif (($controlador=='noticias') and ($accion=='crear')){
+				controladorNoticias::crear();
+			}
+			elseif ($controlador=='actContacto') {
 				controladorContacto::render();
 			}	
 		}else{
