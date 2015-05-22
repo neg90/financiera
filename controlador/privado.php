@@ -19,12 +19,12 @@ require_once 'controladorNoticias.php';
 				controladorMisDatos::modificar();
 			}elseif (($controlador=='correo') and ($accion=='enviar')) {
 				controladorCorreo::enviar();
-			}
-
-
-			elseif ($controlador=='noticias') {
+			}elseif (($controlador=='noticias') and ($accion=='render')){
 				controladorNoticias::render();
-			}elseif ($controlador=='actContacto') {
+			}elseif (($controlador=='noticias') and ($accion=='crear')){
+				controladorNoticias::crear();
+			}
+			elseif ($controlador=='actContacto') {
 				controladorContacto::render();
 			}	
 		}else{
