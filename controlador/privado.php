@@ -13,19 +13,14 @@ require_once 'controladorNoticias.php';
 		$controlador=htmlEntities(@$_GET['c']); 
 		$accion=htmlEntities(@$_GET['a']); 
 		if ((!empty($controlador)) and (!empty($accion))){
-			if (($controlador=='misdatos') and ($accion=='render')) {
-				controladorMisDatos::render();
-			}elseif (($controlador=='misdatos') and ($accion=='modificar')) {
+			if (($controlador=='misdatos') and ($accion=='modificar')) {
 				controladorMisDatos::modificar();
 			}elseif (($controlador=='correo') and ($accion=='enviar')) {
 				controladorCorreo::enviar();
-			}elseif (($controlador=='noticias') and ($accion=='render')){
-				controladorNoticias::render();
-			}elseif (($controlador=='noticias') and ($accion=='crear')){
-				controladorNoticias::crear();
-			}
-			elseif ($controlador=='actContacto') {
-				controladorContacto::render();
+			}elseif (($controlador=='noticias') and ($accion=='modificar')){
+				controladorNoticias::modificar();
+			}elseif ($controlador=='actContacto') {
+				controladorContacto::modificar();
 			}	
 		}else{
 			//Avisar q pifio path
