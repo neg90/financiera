@@ -23,7 +23,7 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #31708f;
+	color: #31708f!important;
 }
 
 .navCel{
@@ -42,4 +42,42 @@
     height:100px;
     display:block;
     margin:0 auto auto auto;
+}
+
+.nav > li {
+	display:inline-block;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #fff;
+  border-color: #337ab7;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #fff;
+}
+
+.botonSubmenu{
+	margin-top:-5px;
+}
+
+.botonSubmenu a{
+	color: #31708f!important;
+}
+
+.dropdown-menu{
+	margin-top:10px;
+}
+
+#conteiner{
+	width:60%;
+}
+
+@media (min-width: 768px){
+
+.navbar-nav > li {
+  float: initial;
+}
+
 }
