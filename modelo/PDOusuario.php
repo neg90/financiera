@@ -29,7 +29,7 @@ class PDOusuario extends usuario{
 			
 
 	}
-
+//revisar
 	public function buscarUser ($user,$clave){
 		try {
 		$conexion = new conexion; //creo instancia de la conexion

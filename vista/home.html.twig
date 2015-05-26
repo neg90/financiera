@@ -26,21 +26,17 @@
 
 <div class="bloque-bottom">
   <div id="modulo1">
-    <h1>Servicios</h1>
+    <h1>{{Titulo1}}</h1>
     <h5 class="desc-mod1">
-    NAVEYRA Compañía Financiera es una empresa joven formada por un equipo con experiencia en el rubro financiero. <br><br>
-    Brindamos asistencia financiera de una forma ágil, simple y rápida a pymes, comercios, negocios, personas físicas y personas jurídicas.<br><br>
-    Estamos en la zona de Puerto Madero, Capital Federal.
-
+      {% autoescape 'html' %}
+        {{ Cuerpo1|raw }}    
+      {% endautoescape %}
     </h5>
     <h6 class="cuerpo-mod1">
       <ul>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Préstamos.  </span><br>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Descuento de cheques de terceros.</span><br>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Descuento de cheques de terceros al dia.</span><br>
-     <!--   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Maecenas tempus, </span>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> Tellus eget condimentum rhoncus </span>
-      -->
+        {% autoescape 'html' %}
+          
+        {% endautoescape %}
       </ul>
     </h6>
   </div>
@@ -100,9 +96,6 @@
       <textarea class="form-control" rows="3" cols="60" style="overflow:auto;resize:none" name="comentario"  pattern="[A-Za-z.,!?¿]{1,254}"></textarea>
     </div>
 
-
-    
-
     <div class="btn-group">
       <button type="submit" class="btn btn-primary">
         Enviar
@@ -112,17 +105,11 @@
     </div>
   </div>
     <div id="modulo3">
-    <h1>Datos</h1>
+    <h1>{{Titulo2}}</h1>
     <h5 class="desc-mod1">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Los prèstamos son devueltos con cheques propios.</span>  <br>
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Poseer chequera con antigüedad mayor a 12 meses.</span><br>
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Plazo del préstamo hasta 120 días.</span><br>
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Hasta 4 cuotas mensuales.</span><br>
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">TNA: 60%. </span><br>
-      
-        
-       
-     
+      {% autoescape 'html' %}
+        {{ Cuerpo2|raw }}    
+      {% endautoescape %}
        
     </h5>
   </div>
