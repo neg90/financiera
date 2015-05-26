@@ -1,6 +1,6 @@
 <?php
 
-class noticia {
+class contacto {
 
 	private $id;
 	private $correo;
