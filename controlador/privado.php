@@ -3,6 +3,7 @@
 require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
 require_once 'controladorMisDatos.php';
 require_once 'controladorNoticias.php';
+require_once 'controladorContacto.php';
 
 
   	session_start();

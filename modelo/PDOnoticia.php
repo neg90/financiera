@@ -11,19 +11,21 @@ class PDOnoticia extends noticia{
 		parent::__construct($titulo1,$titulo2,$cuerpo1,$cuerpo2);
 	}
 
-	public function insertar(){
+	public static function modificar($titulo1,$titulo2,$cuerpo1,$cuerpo2,$Id){
 		try {$conexion = new conexion;}catch (PDOException $e){}
-		$consulta = $conexion->prepare('INSERT INTO noticia (titulo1,titulo2,cuerpo1,cuerpo2) 
-		VALUES(:titulo1,:titulo2,:cuerpo1,:cuerpo2)');
 
-		$consulta->bindParam(':titulo1', $this->getTitulo1());
-		$consulta->bindParam(':titulo2', $this->getTitulo2());
-		$consulta->bindParam(':cuerpo1', $this->getCuerpo1());
-		$consulta->bindParam(':cuerpo2', $this->getCuerpo2());
+		$consulta = $conexion->prepare('UPDATE noticia SET titulo1 = :titulo1, titulo2 = :titulo2, cuerpo1 = :cuerpo1,
+		cuerpo2 = :cuerpo2 WHERE Id = :Id');
+
+		$consulta->bindParam(':Id',$Id);
+		$consulta->bindParam(':titulo1',$titulo1);
+		$consulta->bindParam(':titulo2',$titulo2);
+		$consulta->bindParam(':cuerpo1',$cuerpo1);
+		$consulta->bindParam(':cuerpo2',$cuerpo2);
 		$consulta->execute();
 	}
 
-	public function buscarNoticia(){	
+	public static function buscarNoticia(){	
 		try {$conexion = new conexion;}catch (PDOException $e){}
 		$consulta = $conexion->prepare('SELECT * FROM noticia');
 		$consulta->execute();

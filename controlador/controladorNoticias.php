@@ -17,8 +17,10 @@ class controladorNoticias	 {
 				$titulo2=$_POST["titulo2"];
 				$cuerpo1=$_POST["editor1"];
 				$cuerpo2=$_POST["editor2"];
-				$unaNoticia = new PDOnoticia ($titulo1,$titulo2,$cuerpo1,$cuerpo2);
-				$unaNoticia->insertar();
+				$unaNoticia = PDOnoticia::buscarNoticia();
+				$Id = $unaNoticia["Id"];
+
+				PDOnoticia::modificar($titulo1,$titulo2,$cuerpo1,$cuerpo2,$Id);
 				//Evitar el cargar dos veces una noticia.
 				header('Location:privado.php?c=noticias&a=modificar');
 				exit();					
