@@ -23,7 +23,7 @@ require_once 'controladorContacto.php';
 			}	
 		}else{
 			//Avisar q pifio path
-			ControladorDeAcceso::principal();
+			
 		}
 
 	}

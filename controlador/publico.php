@@ -6,8 +6,6 @@ require_once '../modelo/coneDB.php';
 require_once '../modelo/PDOnoticia.php';
 require_once '../modelo/PDOcontacto.php';
 	
-	session_start();
-	$_SESSION['tokensMail'] = 0;
 	$controlador=htmlEntities(@$_GET['c']); 
 	$accion=htmlEntities(@$_GET['a']); 
 	$aviso=htmlEntities(@$_GET['aviso']);
