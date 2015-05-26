@@ -13,7 +13,7 @@ class PDOnoticia extends noticia{
 
 	public function insertar(){
 		try {$conexion = new conexion;}catch (PDOException $e){}
-		$consulta = $conexion->prepare('INSERT INTO noticia (titulo1,titulo2,cuerpo1,cuerpo2s) 
+		$consulta = $conexion->prepare('INSERT INTO noticia (titulo1,titulo2,cuerpo1,cuerpo2) 
 		VALUES(:titulo1,:titulo2,:cuerpo1,:cuerpo2)');
 
 		$consulta->bindParam(':titulo1', $this->getTitulo1());

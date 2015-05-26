@@ -19,10 +19,10 @@ require_once '../modelo/PDOnoticia.php';
 		$twig = new Twig_Environment($loader, array('debug' => 'false','cache' => '../cache')); 
 		$unaNoticia =	PDOnoticia::buscarNoticia();
 		if ($unaNoticia == false){
-			$Cuerpo1 = "No se cargaron informacion";
-			$Cuerpo2 = "No se cargaron informacion";
-			$Titulo1 = "No se cargaron informacion";
-			$Titulo2 = "No se cargaron informacion";
+			$Cuerpo1 = "No disponible";
+			$Cuerpo2 = "No disponible";
+			$Titulo1 = "No disponible";
+			$Titulo2 = "No disponible";
 			
 		}else{
 			$Cuerpo1 = $unaNoticia["Cuerpo1"];

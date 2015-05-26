@@ -25,12 +25,7 @@ class controladorNoticias	 {
 			$titulo2=$_POST["titulo2"];
 			$cuerpo1=$_POST["editor1"];
 			$cuerpo2=$_POST["editor2"];
-			$nota1=$_POST["nota1"];
-			$nota2=$_POST["nota2"];
-			$nota3=$_POST["nota3"];
-			$nota4=$_POST["nota4"];
-			$nota5=$_POST["nota5"];
-			$unaNoticia = new PDOnoticia ($titulo1,$titulo2,$cuerpo1,$cuerpo2,$nota1,$nota2,$nota3,$nota4,$nota5);
+			$unaNoticia = new PDOnoticia ($titulo1,$titulo2,$cuerpo1,$cuerpo2);
 			$unaNoticia->insertar();
 			//Evitar el cargar dos veces una noticia.
 			header('Location:privado.php?c=noticias&a=crear');
@@ -53,12 +48,8 @@ class controladorNoticias	 {
 			$titulo2=$_POST["titulo2"];
 			$cuerpo1=$_POST["editor1"];
 			$cuerpo2=$_POST["editor2"];
-			$nota1=$_POST["nota1"];
-			$nota2=$_POST["nota2"];
-			$nota3=$_POST["nota3"];
-			$nota4=$_POST["nota4"];
-			$nota5=$_POST["nota5"];
-			$unaNoticia = new PDOnoticia ($titulo1,$titulo2,$cuerpo1,$cuerpo2,$nota1,$nota2,$nota3,$nota4,$nota5);
+			
+			$unaNoticia = new PDOnoticia ($titulo1,$titulo2,$cuerpo1,$cuerpo2);
 			$unaNoticia->insertar();
 			//Evitar el cargar dos veces una noticia.
 			header('Location:privado.php?c=noticias&a=crear');
@@ -71,11 +62,7 @@ class controladorNoticias	 {
 			$titulo2=$unaNoticia["titulo2"];
 			$cuerpo1=$unaNoticia["editor1"];
 			$cuerpo2=$unaNoticia["editor2"];
-			$nota1=$unaNoticia["nota1"];
-			$nota2=$unaNoticia["nota2"];
-			$nota3=$unaNoticia["nota3"];
-			$nota4=$unaNoticia["nota4"];
-			$nota5=$unaNoticia["nota5"];
+
 			$template = $twig->loadTemplate('noticia.html.twig');
 			echo $template->render(array());
 		}
