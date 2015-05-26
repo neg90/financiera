@@ -23,14 +23,11 @@ require_once '../modelo/PDOnoticia.php';
 			$Cuerpo2 = "No disponible";
 			$Titulo1 = "No disponible";
 			$Titulo2 = "No disponible";
-			
 		}else{
-			
 			$Cuerpo1 = $unaNoticia["Cuerpo1"];
 			$Cuerpo2 = $unaNoticia["Cuerpo2"];
 			$Titulo1 = $unaNoticia["Titulo1"];
 			$Titulo2 = $unaNoticia["Titulo2"];
-			
 		}
 		$template = $twig->loadTemplate('home.html.twig');
 		echo $template->render(array('enviado'=>0,'Cuerpo1'=>$Cuerpo1,'Titulo1'=>$Titulo1,'Titulo2'=>$Titulo2,'Cuerpo2'=>$Cuerpo2));

@@ -24,7 +24,7 @@ class controladorNoticias	 {
 				exit();					
 			}
 		}else{
-			$unaNoticia =	PDOnoticia::buscarNoticia();
+			$unaNoticia = PDOnoticia::buscarNoticia();
 			if ($unaNoticia == false){
 				$Cuerpo1 = "No disponible";
 				$Cuerpo2 = "No disponible";

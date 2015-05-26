@@ -118,13 +118,8 @@ class controladorCorreo	 {
 				exit();
 	        }
 
-	  	}else{
-	  		//Tratar el error
 	  	}
 	  		
-		//$template = $twig->loadTemplate('confirmacion.html.twig');
-
-		//echo $template->render(array());
 	}	
 }
 ?>

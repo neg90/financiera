@@ -1,0 +1,35 @@
+{% extends "basePrivada.html.twig" %}
+
+ {% block title %}Modificar Contacto{% endblock %}
+  {% block conteiner %}
+    <div class="col-4" style="">
+      <div style="margin:0 auto 0 auto; ">
+       <div class="panel-heading" > 
+            <h3>Mis Contacto</h3>
+       </div>
+       <div class="panel-body">
+
+          <form role="form" id="contacto" action="privado.php?c=actContacto&a=modificar" method="POST">
+
+                <span class="help-block">Correo: </span>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo" required/>             
+                </div>
+                <span class="help-block">Telefono:</span>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required/>             
+                </div>
+                <span class="help-block">Ubicacion:</span>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ubicacion" required/>             
+                </div>
+   
+                
+                <button id="btn-login" class="btn btn-success boton-enviar" type="submit" name="guardarNoticia">Guardar</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+         
+  {% endblock %}
