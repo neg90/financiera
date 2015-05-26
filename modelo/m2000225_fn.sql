@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-05-2015 a las 00:15:28
+-- Tiempo de generación: 26-05-2015 a las 02:07:28
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -52,7 +52,14 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   `Telefono` varchar(50) NOT NULL,
   `Ubicacion` varchar(50) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`Id`, `Correo`, `Telefono`, `Ubicacion`) VALUES
+(1, 'financiera.naveyra', '(011) 15-3858-', 'Puerto Madero CP: ');
 
 -- --------------------------------------------------------
 
@@ -63,24 +70,18 @@ CREATE TABLE IF NOT EXISTS `contacto` (
 CREATE TABLE IF NOT EXISTS `noticia` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Titulo1` varchar(50) NOT NULL,
-  `Cuerpo1` varchar(254) NOT NULL,
-  `Nota1` varchar(50) NOT NULL,
-  `Nota2` varchar(50) NOT NULL,
-  `Nota3` varchar(50) NOT NULL,
-  `Nota4` varchar(50) NOT NULL,
-  `Nota5` varchar(50) NOT NULL,
+  `Cuerpo1` varchar(600) NOT NULL,
   `Titulo2` varchar(50) NOT NULL,
-  `Cuerpo2` varchar(254) NOT NULL,
+  `Cuerpo2` varchar(600) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`Id`, `Titulo1`, `Cuerpo1`, `Nota1`, `Nota2`, `Nota3`, `Nota4`, `Nota5`, `Titulo2`, `Cuerpo2`) VALUES
-(9, '', '', '', '', '', '', '', '', ''),
-(10, 'asd', '<pre>\r\nsdfsdfsdf</pre>\r\n', 'asd', 'asd', 'asdasd', 'asdasd', 'asdad', 'asd', '<p>asdasd</p>\r\n');
+INSERT INTO `noticia` (`Id`, `Titulo1`, `Cuerpo1`, `Titulo2`, `Cuerpo2`) VALUES
+(9, 'Servicios', '<p>asdas</p>\r\n', 'asdsad', '<p>asdasdasdasddsaasdasddqweqwe</p>\r\n');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
