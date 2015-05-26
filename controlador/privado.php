@@ -19,7 +19,7 @@ require_once 'controladorNoticias.php';
 				controladorCorreo::enviar();
 			}elseif (($controlador=='noticias') and ($accion=='modificar')){
 				controladorNoticias::modificar();
-			}elseif ($controlador=='actContacto') and ($accion == 'modificar'){
+			}elseif (($controlador=='actContacto') and ($accion == 'modificar')){
 				controladorContacto::modificar();
 			}	
 		}else{
