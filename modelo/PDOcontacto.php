@@ -15,7 +15,7 @@ class PDOcontacto extends contacto{
 		try {$conexion = new conexion;}catch (PDOException $e){}
 
 		$consulta = $conexion->prepare('UPDATE contacto SET Correo = :Correo, Ubicacion = :Ubicacion, Telefono = :Telefono
-		 WHERE Id = :Id');
+		WHERE Id = :Id');
 
 		$consulta->bindParam(':Id',$Id);
 		$consulta->bindParam(':Correo',$Correo);

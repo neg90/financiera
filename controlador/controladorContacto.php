@@ -14,6 +14,7 @@ class controladorContacto {
 		
 		$unContacto = PDOcontacto::buscarContacto();
 		if (isset($_POST["guardarContacto"])) {
+
 			if ($unContacto == false){
 				$Correo = "No disponible";
 				$Ubicacion = "No disponible";
@@ -23,14 +24,14 @@ class controladorContacto {
 				$Ubicacion = $unContacto["Ubicacion"];
 				$Telefono = $unContacto["Telefono"];
 			}
-			if(!empty($_POST["correo"]) and !empty($_POST["ubicacion"]) and !empty($_POST["telefono"])){
+			if(!empty($_POST["Correo"]) and !empty($_POST["Ubicacion"]) and !empty($_POST["Telefono"])) {
 				$Correo=$_POST["Correo"];
 				$Ubicacion=$_POST["Ubicacion"];
 				$Telefono=$_POST["Telefono"];
 			
 				$Id = $unContacto["Id"];
 				
-				PDOnoticia::modificar($Correo,$Ubicacion,$Telefono,$Id);
+				PDOcontacto::modificar($Correo,$Ubicacion,$Telefono,$Id);
 				//Evitar el cargar dos veces una noticia.
 				//Anda todo Bien!
 				$template = $twig->loadTemplate('contacto.html.twig');
@@ -42,6 +43,7 @@ class controladorContacto {
 			}
 		}else{
 			
+
 			$unContacto = PDOcontacto::buscarContacto();
 			if ($unContacto == false){
 				$Correo = "No disponible";
@@ -53,7 +55,7 @@ class controladorContacto {
 				$Telefono = $unContacto["Telefono"];
 			}
 			$template = $twig->loadTemplate('contacto.html.twig');
-				echo $template->render(array('Correo'=>$Correo,'Ubicacion'=>$Ubicacion,'Telefono'=>$Telefono));
+			echo $template->render(array('Correo'=>$Correo,'Ubicacion'=>$Ubicacion,'Telefono'=>$Telefono));
 
 		}
 		
