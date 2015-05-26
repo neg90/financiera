@@ -25,6 +25,7 @@ require_once '../modelo/PDOnoticia.php';
 			$Titulo2 = "No disponible";
 			
 		}else{
+			
 			$Cuerpo1 = $unaNoticia["Cuerpo1"];
 			$Cuerpo2 = $unaNoticia["Cuerpo2"];
 			$Titulo1 = $unaNoticia["Titulo1"];

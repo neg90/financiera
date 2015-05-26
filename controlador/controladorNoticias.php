@@ -23,9 +23,23 @@ class controladorNoticias	 {
 				header('Location:privado.php?c=noticias&a=modificar');
 				exit();					
 			}
+		}else{
+			$unaNoticia =	PDOnoticia::buscarNoticia();
+			if ($unaNoticia == false){
+				$Cuerpo1 = "No disponible";
+				$Cuerpo2 = "No disponible";
+				$Titulo1 = "No disponible";
+				$Titulo2 = "No disponible";
+			}else{
+				$Cuerpo1 = $unaNoticia["Cuerpo1"];
+				$Cuerpo2 = $unaNoticia["Cuerpo2"];
+				$Titulo1 = $unaNoticia["Titulo1"];
+				$Titulo2 = $unaNoticia["Titulo2"];
+			}
+			$template = $twig->loadTemplate('noticia.html.twig');
+			echo $template->render(array('Cuerpo1'=>$Cuerpo1,'Titulo1'=>$Titulo1,'Titulo2'=>$Titulo2,'Cuerpo2'=>$Cuerpo2));
+
 		}
-		$template = $twig->loadTemplate('noticia.html.twig');
-		echo $template->render(array());
 		
 	}
 
