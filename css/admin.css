@@ -1,4 +1,4 @@
-
+@media screen {
 .cajaLogin{
 	margin-top:50px;
 }
@@ -71,20 +71,15 @@
 }
 
 #conteiner{
-	width:60%;
+	width:900px;
+	margin: 0 auto;
 }
 
-@media (min-width: 768px){
-
-.navbar-nav > li {
-  float: initial;
 }
 
-.caja{
-	width: 100%;
-  	margin-left: 30%;
-    
-     
-}  
-
+@media screen and (min-width: 600px) and (max-width: 1000px) { /*Tablet*/
+	#conteiner{width:90%; margin:0 auto;}
+}
+@media screen and (min-width: 320px) and (max-width: 599px) { /*SMARTPHONE*/
+	#conteiner{width:90%;margin:0 auto;}
 }
