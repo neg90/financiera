@@ -19,7 +19,7 @@
  {% block title %}Modificar Noticia{% endblock %}
   {% block conteiner %}
     <div class="col-4" style="">
-      <div style="margin:0 auto 0 auto; ">
+      <div class="caja">
        <div class="panel-heading" > 
             <h3>Mis Noticias</h3>
        </div>
@@ -38,16 +38,17 @@
    
                 <div class="form-group">
                   <span class="help-block">Cuerpo 1:</span>
-                  <textarea class="ckeditor" name="editor1" required/></textarea>
+                  <textarea class="ckeditor" name="editor1" required/>{{Cuerpo1}}</textarea>
                 </div>
                 <div class="form-group">
                   <span class="help-block">Cuerpo 2:</span>
-                  <textarea class="ckeditor" name="editor2"  required/></textarea>
+                  <textarea class="ckeditor" name="editor2"  required/>{{Cuerpo2}}</textarea>
                 </div>
                 <button id="btn-login" class="btn btn-success boton-enviar" type="submit" name="guardarNoticia">Guardar</button>
           </form>
 
         </div>
+      </div>
       </div>
     </div>
          
