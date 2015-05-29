@@ -3,6 +3,7 @@
 session_start();
 require_once('../modelo/coneDB.php');
 require_once('../modelo/PDOusuario.php');
+
 	if (!isset($_SESSION['user']) && (htmlEntities(isset($_POST['user'])))) {
 		if (!empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))){
 			$user = filter_var(htmlEntities($_POST['user']), FILTER_SANITIZE_STRING); //FILTER_SANITIZE_STRING -> Elimina etiquetas, opcionalmente elimina o codifica caracteres especiales.
@@ -19,25 +20,16 @@ require_once('../modelo/PDOusuario.php');
 					$_SESSION['user'] = htmlEntities($_POST['user']);
 					header("Location:privado.php?c=noticias&a=modificar");
 				} else {
-					//aca el usuario no existe por uno u otro campo
-	        		header("Location:index.php?aviso=4");
+					//aca el usuario no existe por uno u otro campo 
+					echo "<script type=\"text/javascript\">alert(\"Usuario o clave incorrecto\");javascript:history.back();</script>";  
+
 				}
 			}catch(Exception $e){
-				//echo $e->getMessage();
 				controladorError::ErrorDB();
 			}
-		}elseif (empty(htmlEntities($_POST['user'])) && !empty(htmlEntities($_POST['clave']))) {
-	        header("Location: index.php?aviso=1");
-	        //falla la clave
-		}elseif (!empty(htmlEntities($_POST['user'])) && empty(htmlEntities($_POST['clave']))){
-	        header("Location: index.php?aviso=2");
-	        //falla el usuario
-		}else {
-	        header("Location: index.php?aviso=3");
-	        //quilombo en la franja de gaza
 		}
 	}elseif (isset($_SESSION['user'])) {
-		//el tipo tien sesion abierta
+	//el tipo tien sesion abierta
 		header("Location:privado.php?c=noticias&a=modificar");
 	}
  
