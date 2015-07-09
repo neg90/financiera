@@ -75,6 +75,8 @@
 	margin: 0 auto;
 }
 
+.botonTabla{border:0px;background-color: initial; color:#337ab7;outline:none;}
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) { /*Tablet*/
@@ -82,4 +84,9 @@
 }
 @media screen and (min-width: 320px) and (max-width: 599px) { /*SMARTPHONE*/
 	#conteiner{width:90%;margin:0 auto;}
+}
+
+.controles form{
+	display: inline-block;
+	width: 20px;
 }

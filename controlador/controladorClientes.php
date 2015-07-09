@@ -11,8 +11,10 @@ class controladorCliente {
 	  	$loader = new Twig_Loader_Filesystem('../vista');
 	  	$twig = new Twig_Environment($loader, array('cache' => '../cache','debug' => 'false')); 
 
+	  	$clientes = PDOCliente::listar();
+
 	  	$template = $twig->loadTemplate('clientes/verClientes.html.twig');
-		echo $template->render(array());
+		echo $template->render(array('clientes'=>$clientes));
 		
 	}
 

@@ -14,13 +14,15 @@ class cliente {
 	private $provincia;
 	private $ciudad;
 	private $cp;
+	private $clave;
+	private $estado;
 
-	public function	__construct ($id,$nombre,$apellido,$dni,$direccion,$correo,$banco,$cuilt,$cbu,$provincia,$ciudad,$cp) {
+	public function	__construct ($id,$nombre,$apellido,$dni,$direccion,$correo,$banco,$cuilt,$cbu,$provincia,$ciudad,$cp,$clave,$estado) {
 
 		$this->id = $id;
 		$this->nombre = $nombre;
 		$this->apellido = $apellido;
-		
+		$this->clave = $clave;
 		$this->direccion = $direccion;
 		$this->dni = $dni;
 		$this->correo= $correo;
@@ -30,6 +32,7 @@ class cliente {
 		$this->provincia = $provincia;
 		$this->ciudad = $ciudad;
 		$this->cp = $cp;
+		$this->estado = $estado;
 	}
 
 	public function getId(){
@@ -38,6 +41,22 @@ class cliente {
 
 	public function setId($id){
 		$this->id = $id;
+	}
+
+	public function getEstado(){
+		return $this->estado;
+	}
+
+	public function setEstado($estado){
+		$this->estado = $estado;
+	}
+
+	public function getClave(){
+		return $this->clave;
+	}
+
+	public function setClave($clave){
+		$this->clave = $clave;
 	}
 
 	public function getNombre(){

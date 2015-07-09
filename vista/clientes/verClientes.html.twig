@@ -4,31 +4,60 @@
 	<table class="table table-hover">
 	  <thead>
 	    <tr>
-	      <th>#</th>
-	      <th>First Name</th>
-	      <th>Last Name</th>
-	      <th>Username</th>
+	      <th>Nombre</th>
+	      <th>Apellido</th>
+	      <th>Nro. Documento</th>
+	      <th>Direccion</th>
+	      <th>Estado</th>
+	      <th>Controles</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <td>1</td>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	    </tr>
-	    <tr>
-	      <td>2</td>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <td>3</td>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
+	  	{% for item in clientes %}
+		    <tr>
+		      <td>{{item.nombre}}</td>
+		      <td>{{item.apellido}}</td>
+		      <td>{{item.dni}}</td>
+		      <td>{{item.direccion}}</td>
+		      <td>{{item.estado}}</td>
+		      <td class="controles">
+	            <!--Ver contacto-->
+	            <form method="post" action="privado.php?c=contacto&a=modificar" id="modificarContacto{{item.idcontacto}}">
+	              <input type="hidden" value="{{item.idcontacto}}" name="idcontacto">
+	              <a href="javascript:{}" onclick="document.getElementById('modificarContacto{{item.idcontacto}}').submit(); return false;">
+	                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+	              </a>
+	            </form>
+	             <!--Eliminar contacto-->
+	            <form method="post" action="privado.php?c=cliente&a=baja" >
+	              <input type="hidden" value="{{item.id}}" name="id">
+	              <button type="button" class="botonTabla" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+	              	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+					  <div class="modal-dialog modal-sm">
+					    <div class="modal-content">
+					    	<div class="modal-header">
+					    		<h4 class="modal-title">Confirme</h4>
+					    	</div>
+					       <div class="modal-body">
+					       			Está seguro que desea eliminarlo?
+					       	</div>
+					       <div class="modal-footer">
+					        	<button type="submit" class="btn btn-primary">Si</button>
+					        	<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					    
+					      </div>
+					    </div>
+					  </div>
+					</div>
+	                
+	              </a>
+	            </form> 
+         	  </td>
+		    </tr>
+
+	    {% endfor %}
 	  </tbody>
   	</table>
+
+
 {% endblock %}
