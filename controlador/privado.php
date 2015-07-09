@@ -1,9 +1,10 @@
 <?php
 
 require_once '../vendor/twig/twig/lib/Twig/Autoloader.php';
-
+require_once 'controladorClientes.php';
 require_once 'controladorNoticias.php';
 require_once 'controladorContacto.php';
+
 
 
   	session_start();
@@ -20,6 +21,11 @@ require_once 'controladorContacto.php';
 				controladorNoticias::modificar();
 			}elseif (($controlador=='actContacto') and ($accion == 'modificar')){
 				controladorContacto::modificar();
+				//CLIENTES
+			}elseif ($controlador == 'cliente') {
+				if ($accion == 'ver') {
+					controladorCliente::listar();
+				}
 			}	
 		}else{
 			//Avisar q pifio path
