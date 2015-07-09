@@ -1,6 +1,8 @@
 <?php
 	require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 	include_once('publico.php');
+	require_once '../modelo/PDOnoticia.php';
+	require_once '../modelo/PDOcontacto.php';
 
 class controladorCorreo	 {
 	//evita la inyeccion de mail
@@ -29,7 +31,6 @@ class controladorCorreo	 {
 	}
 
 	static function enviar(){
-		$_SESSION['tokensMail'] = $_SESSION['tokensMail']++;
 		$fallo = false;
 		$seEnvia = true;
 		Twig_Autoloader::register();
@@ -70,10 +71,15 @@ class controladorCorreo	 {
 	  		$seEnvia = false;
 	  		$avisoCC = "No cargo correctamente su CUIL/CUIT";
 	  	}
-	  	if  (!empty(@$_POST['cc'])){
-	  		$comentario = "El usuario no ingreso comentarios :(";
+	 
+	  	$comentario = htmlEntities(@$_POST['comentario']);
+	  	
+	  	if (!empty(@$_POST['servicio'])) {
+	  		$servicio = htmlEntities(@$_POST['servicio']);
 	  	}else{
-	  		$comentario = htmlEntities(@$_POST['comentario']);
+	  		$fallo = true;
+	  		$seEnvia = false;
+	  		$avisoCC = "No cargo correctamente el servicio";
 	  	}
 	  	if ($seEnvia){
 	  		$mail = new PHPMailer();
@@ -88,7 +94,7 @@ class controladorCorreo	 {
 			$mail->Port = 587;  
 
 			$mail->FromName = 'Sistema Financiera Naveyra';
-			$mail->addAddress('financiera.naveyra@gmail.com');    
+			$mail->addAddress('info@naveyra.com.ar');    
 
 			$mail->Subject = 'Pedido de informacion';
 			
@@ -100,21 +106,46 @@ class controladorCorreo	 {
 	    	$mensaje.= "Coreo electronico:    ".$correoE ."\n";
 	    	$mensaje.= "CUIT/CUIL: ".$cc ."\n";
 	    	$mensaje.= "Comentario: ".$comentario ."\n";
+	    	$mensaje.= "Servicio: " .$servicio ."\n";
 	    	$mensaje.= "FECHA:    ".date("d/m/Y")."\n";
 	    	$mensaje.= "HORA:     ".date("h:i:s a")."\n\n";   	
 	    	$mensaje.= "---------------------------------- \n";
 	    	$mensaje.= "Enviado desde www.naveyra.com.ar \n";
 	    	$mail->Body = $mensaje;
+
+	    	$unaNoticia =	PDOnoticia::buscarNoticia();
+			if ($unaNoticia == false){
+				$Cuerpo1 = "No disponible";
+				$Cuerpo2 = "No disponible";
+				$Titulo1 = "No disponible";
+				$Titulo2 = "No disponible";
+			}else{
+				$Cuerpo1 = $unaNoticia["Cuerpo1"];
+				$Cuerpo2 = $unaNoticia["Cuerpo2"];
+				$Titulo1 = $unaNoticia["Titulo1"];
+				$Titulo2 = $unaNoticia["Titulo2"];
+			}
+			$unContacto = PDOcontacto::buscarContacto();
+			if ($unContacto == false){
+				$Correo = "No disponible";
+				$Ubicacion = "No disponible";
+				$Telefono = "No disponible";
+			}else{
+				$Correo = $unContacto["Correo"];
+				$Ubicacion = $unContacto["Ubicacion"];
+				$Telefono = $unContacto["Telefono"];
+			}
 			if(!$mail->send()) {
 				//Ojo atento por q por no tener captch te puede reenviar el formulario!
 				//Si aprieta f5 estas frito angelito
 				$template = $twig->loadTemplate('home.html.twig');
-				echo $template->render(array('enviado'=>2));
-				
+				echo $template->render(array('enviado'=>2,'Cuerpo1'=>$Cuerpo1,'Titulo1'=>$Titulo1,'Titulo2'=>$Titulo2,'Cuerpo2'=>$Cuerpo2,
+				'Correo'=>$Correo,'Ubicacion'=>$Ubicacion,'Telefono'=>$Telefono));
 			} else {
+				$template = $twig->loadTemplate('home.html.twig');
 
-	    		$template = $twig->loadTemplate('home.html.twig');
-				echo $template->render(array('enviado'=>1));
+	    		echo $template->render(array('enviado'=>1,'Cuerpo1'=>$Cuerpo1,'Titulo1'=>$Titulo1,'Titulo2'=>$Titulo2,'Cuerpo2'=>$Cuerpo2,
+				'Correo'=>$Correo,'Ubicacion'=>$Ubicacion,'Telefono'=>$Telefono));
 				exit();
 	        }
 

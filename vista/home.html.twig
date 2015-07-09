@@ -48,9 +48,16 @@
   <div id="modulo2">
     <!--Alertas de mail-->
     {% if enviado == 1 %}
-      <div class="alert alert-success">El mensaje fue enviado correctamente.</div>
+      <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Perfecto!</strong> El mensaje fue enviado correctamente.
+      </div>
     {% elseif enviado == 2 %}
-      <div class="alert alert-danger">No se pudo enviar el mensaje.</div>
+      <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Fallo!</strong> El mensaje no fue enviado.
+      </div>
+      
     {% endif %}
     <!--Fin de alertas de mail-->
     <h1>Contactenos</h1>
@@ -89,6 +96,16 @@
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
       </span>
       <input type="text" class="form-control" aria-describedby="sizing-addon2" name="cc"  pattern="[0-9/-()]{1,15}" required/>
+    </div>
+    <label>Servicios</label> <span class="ast">*</span>
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+      </span>
+      <select class="form-control" name="servicio">
+      <option> Prestamos personales </option>
+      <option> Descuento de cheque de terceros </option>
+    </select> 
     </div>
 
     <label>Comentario</label>
